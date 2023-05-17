@@ -4,6 +4,7 @@ namespace EmployeeWage
 {
     internal class Program
     {
+        const int absent = 0;
         const int fullDay = 1;
         const int halfDay = 2;
         const int perHourWage = 20;
@@ -14,19 +15,16 @@ namespace EmployeeWage
             Random random = new Random();
            int empHours = 0;
             int check=random.Next(0,3);
-            if (check ==fullDay)
+
+
+            switch (check) 
             {
-                empHours = fullDayHaour;
+            case fullDay:empHours = fullDayHaour; break;
+                case halfDay:empHours=halfDahour; break;
+
+                case absent:empHours=0; break;
             }
-            else if (check == halfDay) 
-            {
-                empHours = halfDahour;
-             
-            }
-            else
-            {
-                empHours = 0;
-            }
+            
 
             int dailyWage = empHours * perHourWage;
 
